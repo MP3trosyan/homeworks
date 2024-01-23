@@ -87,27 +87,30 @@ function slice(str, fromIndex = 0, toIndex = str.length) {
   if (toIndex > str.length) {
     toIndex = str.length
   }
-
-  if (fromIndex < toIndex && fromIndex >= 0 && toIndex >= 0) {
-    for (let i = fromIndex; i < toIndex; i++) {
-      result += str[i];
-    }
-  } else if (fromIndex < toIndex && fromIndex < 0 && toIndex >= 0) {
-    for (let i = str.length + fromIndex; i < toIndex; i++) {
-      result += str[i];
-    }
-  } else if (fromIndex > toIndex && fromIndex >= 0 && toIndex < 0) {
-    for (let i = fromIndex; i <= str.length - 1 + toIndex; i++) {
-      result += str[i];
-    }
-  } else {
-    for (let i = str.length + fromIndex; i <= str.length - 1 + toIndex; i++) {
-      result += str[i];
-    }
+  if (fromIndex < 0) {
+      fromIndex = fromIndex + str.length
+  } 
+  if (fromIndex < -str.length) {
+      fromIndex = 0
+  }
+  if (fromIndex >= str.length) {
+      return ""
+  }
+  if (toIndex < 0) {
+      toIndex = toIndex + str.length
+  }
+  if (toIndex < -str.length) {
+      toIndex = 0
+  } 
+  if (toIndex < fromIndex) {
+      return ""
+  }
+  for (let i = fromIndex; i < toIndex; i++) {
+      result+=str[i]
   }
   return result
 }
-console.log(slice("ABCDEFG", 1, 7));
+console.log(slice("ABCDEFG", 1, -4));
 
 
 
