@@ -37,7 +37,7 @@ function getMaxProduct (arr) {
     let left = 0
     let right = 1
 
-    while (arr[right] !== undefined) {
+    while (right !== arr.length) {
         product = arr[left] * arr[right]
         if (max <= product) {
             max = product
