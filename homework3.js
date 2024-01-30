@@ -31,27 +31,23 @@ console.log(getSumOfPrimes([3, 4, 5]));
 
 // 3.   Given an array of integers, find the pair of adjacent elements that has the largest product and return that product.
 
-function getLargestProduct(array) {
-    let max = 0;
+function getMaxProduct (arr) {
+    let max = 0
+    let product
     let left = 0
-    let right = array.length - 1
-    let product = 0
+    let right = 1
 
-    while (left < right) {
-      product = array[left] * array[right]
-      if (max <= product) {
-        max = product
-      }
-      if (array[left] < array[right]) {
+    while (arr[right] !== undefined) {
+        product = arr[left] * arr[right]
+        if (max <= product) {
+            max = product
+        }
+        right++
         left++
-      } else {
-        right--
-      }
     }
     return max
 }
-  console.log(getLargestProduct([2, 1,   5, 7, 20, 3, 10]));
-
+console.log(getMaxProduct([1,5,7,2,10,22]));
 
 // 4.   Given a sorted array and an element from that array. Find the index of that element using binary search. (You should research binary
 // search)
