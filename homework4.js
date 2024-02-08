@@ -84,3 +84,17 @@ function forEach(arr, callBack) {
 const newArr = [];
 forEach([1, 3, 55, 76, 23, 1], (el) => newArr.push(el));
 console.log(newArr);
+
+
+// .reduce
+const arr = [1,2,3,4,5,6,7,8,9]
+
+function reduce(arr, callback, initialValue = arr[0]) {
+    let acc = initialValue
+    for (let i = 0; i < arr.length; i++) {
+        acc = callback(acc, arr[i], i, arr)
+    }
+    return acc
+}
+
+console.log(reduce(arr, (acc, el) => acc + el,0));
