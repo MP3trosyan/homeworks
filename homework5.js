@@ -14,7 +14,7 @@ console.log(recReversedNumber(345));
 
 function recFindOccurrences(num, arr, i = 0, counter = 0) {
   if (i === arr.length) {
-    return 0;
+    return -1;
   } else if (arr[i] === num) {
     counter += 1;
     if (counter === 2) {
