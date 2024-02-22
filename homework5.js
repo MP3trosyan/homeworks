@@ -35,9 +35,6 @@ function recSubstringCounter(substring, str, i = 0, counter = 0) {
   }
   if (str.substring(i, substring.length + i) === substring) {
     counter += 1;
-    if (++i > str.length - substring.length) {
-      return counter;
-    }
   }
   return recSubstringCounter(substring, str, i + 1, counter);
 }
