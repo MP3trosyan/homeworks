@@ -90,21 +90,17 @@ console.log(getFlattenedArr([1, 2, 3, [4, 5, [6, [1, 2, 3, [2, 3, 4]], 7]]]));
 // more than 1 digit find the sum of digits of that number. Repeat that process if needed
 // and return the result.
 
-function getSumOfDigits(num) {
-  let sum = 0;
-  function recSumOfDigits(num, i = 0) {
+function recSumOfDigits(num, i = 0, sum = 0) {
     const strDigits = String(num);
     if (i === strDigits.length) {
       if (String(sum).length >= 2) {
-        return getSumOfDigits(sum, 0);
+        return getSumOfDigits(sum, 0);  
       } else {
         return sum;
       }
     } else {
       sum += Number(strDigits[i]);
-      return recSumOfDigits(num, i + 1);
+      return recSumOfDigits(num, i + 1, sum);
     }
   }
-  return recSumOfDigits(num);
-}
 console.log(getSumOfDigits(901));
