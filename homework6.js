@@ -1,17 +1,3 @@
-const nodes2 = [
-    { id: 17, parentId: null },
-    { id: 12, parentId: 17 },
-    { id: 99, parentId: 17 },
-    { id: 22, parentId: 12 },
-    { id: 55, parentId: 77 },
-    { id: 6, parentId: 77 },
-    { id: 77, parentId: 17 },
-    { id: 82, parentId: 55 },
-    { id: 27, parentId: 82 },
-];
-
-
-
 const nodes = [
     {id: 1, parentId: null},
     {id: 2, parentId: 1},
