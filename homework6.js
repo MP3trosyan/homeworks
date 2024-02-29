@@ -19,3 +19,17 @@ const nodes = [
     return newObj  
   }
   console.log(treeMaker(nodes));
+
+
+
+  function treeMaker(arr, baseId = null, newObj = {id: baseId, children: []}) {
+    
+    
+    for (const element of arr) {
+      if (element.parentId === baseId) {
+        newObj.children.push(treeMaker(arr, element.id))
+      }
+    }
+    return newObj
+  }
+  console.log(treeMaker(nodes));
